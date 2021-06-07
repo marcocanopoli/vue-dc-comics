@@ -95,17 +95,18 @@ export default {
             }
 
             ul {
-                display: flex;
+                @include inline-list;
                 height: 100%;
-                list-style: none;
 
-                a {                        
+                li {
+                    padding: 0 15px;
+
+                    a {                        
                     display: flex;
                     align-items: center;
                     height: 100%;
-                    padding: 0 15px;
-                    font-size: 14px;
-                    color: $secondColor;
+                    font-weight: 700;
+                    color: scale-color($secondColor, $lightness: +20%);
                     text-decoration: none;
                     text-transform: uppercase;
                     border-bottom: 5px solid transparent;
@@ -113,8 +114,11 @@ export default {
                     &.active,
                     &:hover {
                         border-bottom: 5px solid $mainColor;
+                        color: $mainColor;
                     }
                 }
+                }
+                
             }
         }
     }

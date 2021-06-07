@@ -14,7 +14,7 @@ export default {
     @import "../style/variables.scss";
 
     section {
-        height: 150px;
+        height: 140px;
         background-color: $mainColor;
     }
 </style>

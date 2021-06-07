@@ -18,11 +18,12 @@ export default {
 
     main {
         background-color: $secondColor;
-        height: 120px;
+        min-height: calc(100vh - 750px);
         div {
             @include container-center;
+            padding: 50px 0;
+
             h1 {
-                text-align: center;
                 color: #fff;
             }
         }

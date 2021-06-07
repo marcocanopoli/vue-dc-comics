@@ -102,12 +102,42 @@
                     </li>
                 </ul>
             </div>
-            <!-- /third col -->
+            <!-- /third col -->           
         </div>
 
         <div class="bottom-container">
             <div class="bottom">
-
+                <a href="#" class="button">Sign-up now!</a>
+                <div >
+                    <span>Follow Us</span>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="../assets/img/footer-facebook.png" alt="facebook logo">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../assets/img/footer-twitter.png" alt="twitter logo">                                
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../assets/img/footer-youtube.png" alt="youtube logo">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../assets/img/footer-pinterest.png" alt="pinterest logo">                                
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../assets/img/footer-periscope.png" alt="periscope logo">                                
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>    
@@ -125,7 +155,7 @@ export default {
 
     footer {
         background: url("../assets/img/footer-bg.jpg") no-repeat top;
-        background-size: cover
+        background-size: cover;
     }
 
     .top,
@@ -135,33 +165,82 @@ export default {
 
     h2 {
         padding: 10px 0;
-        color: #fff;
+        color: $textColor;
         text-transform: uppercase;
     }
 
-    ul {
-        list-style: none;
-    }
 
     .top {
         display: flex;
         height: 370px;
         padding: 30px 0;
+        background: url("../assets/img/dc-logo-bg.png") no-repeat;
+        background-position: right center;
         
         div {
-            margin-right: 50px;
+            margin-right: 30px;
 
-            a {
-                display: inline-block;
-                text-decoration: none;
-                padding: 2px 0;
-                color: scale-color(#fff, $lightness: -40%);
+            ul {
+                list-style: none;
+                a {
+                    display: inline-block;
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 12px;
+                    text-decoration: none;
+                    padding: 2px 0;
+                    color: scale-color($textColor, $lightness: -40%);
+
+                    &:hover {
+                        color: $mainColor;
+                    }
+                }
             }
+            
         }
     }
 
     .bottom-container {
-        height: 150px;
+        height: 120px;
         background-color: scale-color($secondColor, $lightness: +10%);
+
+        .bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+
+            .button {
+                display: inline-block;
+                padding: 15px;
+                font-family: 'Roboto', sans-serif;
+                font-size: 18px;
+                font-weight: 700;
+                color: $textColor;
+                text-transform: uppercase;
+                text-decoration: none;
+                border: 2px solid $mainColor;
+            }
+            
+            div {
+                display: flex;
+                align-items: center;
+
+                span {
+                    font-size: 22px;
+                    font-weight: 700;
+                    color: $mainColor;
+                    text-transform: uppercase;
+                    margin-right: 30px;
+                }
+
+                ul {
+                    @include inline-list;
+
+                    li {
+                        padding: 0 10px;
+                    }
+                }                              
+            }
+        }
     }
 </style>
