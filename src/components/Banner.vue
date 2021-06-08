@@ -1,11 +1,11 @@
 <template>
     <section>
-        <ul>
-            <li v-for="item, index in buyItems" :key="index">
-                <img :src="item.imgName" alt="">
+        <div class="box">
+            <div v-for="item, index in buyItems" :key="index">
+                <img :src="item.imgPath" alt="">
                 <span>{{ item.text }}</span>
-            </li>
-        </ul>
+            </div>
+        </div>
     </section>
 </template>
 
@@ -17,8 +17,24 @@ export default {
             buyItems : [
                 {
                     text : 'Digital comics',
-                    imgName : require('../assets/img/buy-comics-digital-comics.png')
-                }
+                    imgPath : require('../assets/img/buy-comics-digital-comics.png')
+                },
+                {
+                    text : 'DC Merchandise',
+                    imgPath : require('../assets/img/buy-comics-merchandise.png')
+                },
+                {
+                    text : 'Subscription',
+                    imgPath : require('../assets/img/buy-comics-subscriptions.png')
+                },
+                {
+                    text : 'Comic Shop Locator',
+                    imgPath : require('../assets/img/buy-comics-shop-locator.png')
+                },
+                {
+                    text : 'DC Power Visa',
+                    imgPath : require('../assets/img/buy-dc-power-visa.svg')
+                },
             ]
         }
     }
@@ -29,12 +45,32 @@ export default {
     @import "../style/variables.scss";
     @import "../style/mixins.scss";
 
-    section {
+    section {        
         height: 140px;
         background-color: $mainColor;
 
-        ul {
-            @include inline-list;
+        .box {
+            @include container-center;
+            @include flex-center('vertical');
+            height: 100%;
+
+            div {
+                @include flex-center('vertical');
+                width: 100%;
+                justify-content: space-evenly;
+
+                img {
+                    max-height: 60px;
+                    max-width: 60px;
+                }
+    
+                span {
+                    display: block;
+                    margin-left: 20px;
+                    text-transform: uppercase;
+                    color: $textColor;
+                }
+            }
         }
     }
 </style>
