@@ -1,10 +1,12 @@
 <template>
     <header>
-        <div>
-            <img src="../assets/img/dc-logo.png" alt="DC logo">
+        <div class="container">
+            <a href="#">
+                <img src="../assets/img/dc-logo.png" alt="DC logo">
+            </a>
             <ul>
-                <li v-for="link, index in headerLinks" :key="index">
-                    <a href="link.url" :class="{'active' : link.active}">{{ link.text }}</a>
+                <li v-for="(item, index) in menu" :key="index">
+                    <a href="link.url" :class="{'active' : item.active}">{{ item.text }}</a>
                 </li>
             </ul>
         </div>        
@@ -16,7 +18,7 @@ export default {
     name: 'Header',
     data: function() {
         return {
-            headerLinks: [
+            menu: [
                 {
                     text : 'Characters',
                     url : '#characters',
@@ -78,20 +80,22 @@ export default {
     @import "../style/mixins.scss";
 
     header {
-        display: flex;
+        @include flex-center ('vertical');
         justify-content: space-between;        
-        align-items: center;
         height: 120px;
 
         div {
             @include container-center;
-            display: flex;
+            @include flex-center ('vertical');
             justify-content: space-between;
-            align-items: center;
             height: 100%;
 
-            img {
+            & > a {
                 height: 70%;
+            }
+
+            & > a > img {
+                height: 100%;
             }
 
             ul {
@@ -102,21 +106,28 @@ export default {
                     padding: 0 15px;
 
                     a {                        
-                    display: flex;
-                    align-items: center;
-                    height: 100%;
-                    font-weight: 700;
-                    color: scale-color($secondColor, $lightness: +20%);
-                    text-decoration: none;
-                    text-transform: uppercase;
-                    border-bottom: 5px solid transparent;
+                        @include flex-center ('vertical');
+                        position: relative;
+                        height: 100%;
+                        font-weight: 700;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        color: scale-color($secondColor, $lightness: +20%);
 
-                    &.active,
-                    &:hover {
-                        border-bottom: 5px solid $mainColor;
-                        color: $mainColor;
+                        &:hover,
+                        &.active {
+                            color: $mainColor;
+                        }
+                        &.active::after,
+                        &:hover::after {
+                            position: absolute;
+                            content: '';
+                            bottom: 0;
+                            height: 5px;
+                            width: 100%;
+                            background-color: $mainColor;
+                        }
                     }
-                }
                 }
                 
             }

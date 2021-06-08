@@ -158,17 +158,16 @@ export default {
         background-size: cover;
     }
 
-    .top,
-    .bottom {
-        @include container-center;
-    }
-
     h2 {
         padding: 10px 0;
         color: $textColor;
         text-transform: uppercase;
     }
 
+    .top,
+    .bottom {
+        @include container-center;
+    }
 
     .top {
         display: flex;
@@ -184,10 +183,10 @@ export default {
                 list-style: none;
                 a {
                     display: inline-block;
-                    font-family: 'Roboto', sans-serif;
+                    padding: 2px 0;
+                    font-family: $altFont, sans-serif;
                     font-size: 12px;
                     text-decoration: none;
-                    padding: 2px 0;
                     color: scale-color($textColor, $lightness: -40%);
 
                     &:hover {
@@ -204,33 +203,31 @@ export default {
         background-color: scale-color($secondColor, $lightness: +10%);
 
         .bottom {
-            display: flex;
-            align-items: center;
+            @include flex-center ('vertical');
             justify-content: space-between;
             height: 100%;
 
             .button {
                 display: inline-block;
                 padding: 15px;
-                font-family: 'Roboto', sans-serif;
+                font-family: $altFont, sans-serif;
                 font-size: 18px;
                 font-weight: 700;
-                color: $textColor;
                 text-transform: uppercase;
                 text-decoration: none;
                 border: 2px solid $mainColor;
+                color: $textColor;
             }
             
             div {
-                display: flex;
-                align-items: center;
+                @include flex-center ('vertical');
 
                 span {
+                    margin-right: 30px;
                     font-size: 22px;
                     font-weight: 700;
-                    color: $mainColor;
                     text-transform: uppercase;
-                    margin-right: 30px;
+                    color: $mainColor;
                 }
 
                 ul {

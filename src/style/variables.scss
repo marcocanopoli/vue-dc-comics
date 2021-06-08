@@ -1,3 +1,10 @@
-$mainColor : #0282f9;
-$secondColor : #1c1c1c;
-$textColor : #fff;
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
+
+//colors
+$mainColor: #0282f9;
+$secondColor: #1c1c1c;
+$textColor: #fff;
+
+//fonts
+$brandFont: 'PT Sans Narrow';
+$altFont: 'Roboto';

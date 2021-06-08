@@ -22,3 +22,5 @@ pnpm-debug.log*
 *.sln
 *.sw?
 src/assets/res/dc-comics-empty-layout.png
+src/assets/res/dc-comics.json
+src/assets/res/dc-comics.png
