@@ -20,20 +20,42 @@ export default {
 <style lang="scss" scoped>
 
     @import "../style/variables.scss";
+
     .card {
         width: 190px;
         margin-bottom: 50px;  
 
         .img-box {
+            position: relative;
             height: 190px;
             width: 100%;
-            margin-bottom: 10px;  
+            margin-bottom: 10px;
+            cursor: pointer;          
 
-            img {
+            img {                
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
                 object-position: top;
+
+                
+            }
+
+            &::after {
+                position: absolute;
+                content: '';
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 100%;
+                width: 100%;
+                background-color: scale-color($mainColor, $alpha: -30%);
+                transition: .2s;
+                opacity: 0;               
+            }
+
+            &:hover::after {
+                opacity: 1;      
             }
         }
 

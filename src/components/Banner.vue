@@ -57,7 +57,9 @@ export default {
             div {
                 @include flex-center('vertical');
                 width: 100%;
-                justify-content: space-evenly;
+                cursor: pointer;
+                justify-content: center;
+
 
                 img {
                     max-height: 60px;
